@@ -4,8 +4,6 @@ import FinishQuiz from "./FinishQuiz";
 
 export default function QuestionPage({ setDarkMode, currentQuiz, setCurrentQuiz, currentQuestion, setCurrentQuestion}) {
 
-
-
     const [userAnswer, setUserAnswer] = useState(null);
     const [score, setScore] = useState(localStorage.getItem('score') ? JSON.parse(localStorage.getItem('score')) : 0);
     const [submitted, setSubmitted] = useState(false);
@@ -16,7 +14,6 @@ export default function QuestionPage({ setDarkMode, currentQuiz, setCurrentQuiz,
             setUserAnswer(answer);
         }
     };
-
 
     function handleAnswerSelected(e) {
         if (!submitted) {
@@ -31,7 +28,7 @@ export default function QuestionPage({ setDarkMode, currentQuiz, setCurrentQuiz,
     const handleSubmit = () => {
         if(userAnswer === null) return(setIsSelectAnswer(false));
 
-        setSubmitted(true); // Kullanıcının cevabı gönderdiğini belirt
+        setSubmitted(true);
 
         const correctAnswer = currentQuiz.questions[currentQuestion].answer;
         const allAnswers = document.querySelectorAll('.answer');
@@ -70,10 +67,6 @@ export default function QuestionPage({ setDarkMode, currentQuiz, setCurrentQuiz,
         setSubmitted(false);
     };
 
-
-
-
-
     return (
         <>
 
@@ -99,7 +92,6 @@ export default function QuestionPage({ setDarkMode, currentQuiz, setCurrentQuiz,
                                         </div>
                                         <div className="progressbarContainer">
                                             <div className="progressbar" style={{width: `${(currentQuestion + 1) / (currentQuiz.questions.length - 1) * 100}%`}}>
-
 
                                             </div>
                                         </div>
