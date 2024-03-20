@@ -10,23 +10,28 @@ export default function QuestionPage({ setDarkMode, currentQuiz, setCurrentQuiz,
     const [score, setScore] = useState(localStorage.getItem('score') ? JSON.parse(localStorage.getItem('score')) : 0);
     const [submitted, setSubmitted] = useState(false);
     const [isSelectAnswer, setIsSelectAnswer] = useState(true);
+    
     const handleAnswer = (answer) => {
-        setUserAnswer(answer)
+        if (!submitted) {
+            setUserAnswer(answer);
+        }
     };
 
 
     function handleAnswerSelected(e) {
-        const allAnswers = document.querySelectorAll('.answer');
-        allAnswers.forEach((answer) => answer.classList.remove('selected'));
+        if (!submitted) {
+            const allAnswers = document.querySelectorAll('.answer');
+            allAnswers.forEach((answer) => answer.classList.remove('selected'));
 
-        const selectedAnswer = e.currentTarget;
-        selectedAnswer.classList.add('selected');
+            const selectedAnswer = e.currentTarget;
+            selectedAnswer.classList.add('selected');
+        }
     }
-
-
 
     const handleSubmit = () => {
         if(userAnswer === null) return(setIsSelectAnswer(false));
+
+        setSubmitted(true); // Kullanıcının cevabı gönderdiğini belirt
 
         const correctAnswer = currentQuiz.questions[currentQuestion].answer;
         const allAnswers = document.querySelectorAll('.answer');
