@@ -246,6 +246,7 @@ body {
 
   & .wrong-answer {
     border: 3px solid red;
+
     & h2 {
       background-color: red;
       color: #fff;
@@ -254,6 +255,7 @@ body {
 
   .correct-answer {
     border: 3px solid green;
+    
     & h2 {
       background-color: green;
       color: #fff;
