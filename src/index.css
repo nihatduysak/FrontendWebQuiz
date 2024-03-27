@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
-
 :root {
   --Light-Grey: #F4F6FA;
   --Dark-Navy: #313E51;
@@ -31,14 +30,11 @@ a {
 body {
   background: var(--Light-Grey, #F4F6FA);
   font-family: 'Rubik', sans-serif;
-
 }
-
 
 .container {
   margin: 64px auto;
   width: 1160px;
-  
 }
 
 .welcomePage {
@@ -52,7 +48,6 @@ body {
   display: flex;
   justify-content: flex-end;
   gap: 16px;
-
 }
 
 .switchContainer {
@@ -164,14 +159,12 @@ body {
   width: 1160px;
   margin: 0 auto;
   gap: 48px;
-  
 }
 
 .questions {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
 }
 
 .questionsText {
@@ -194,25 +187,20 @@ body {
     font-weight: 500;
     line-height: 120%; /* 43.2px */
   }
-
 }
-
 
 .progressbarContainer {
   background-color: var(--Pure-White, #FFF);
   padding: 0.25rem;
   border-radius: 62.5rem;
   height: 16px;
-  
 }
+
 .progressbar {
   background-color: hsla(277, 91%, 56%, 1);
   border-radius: 6.5rem;
   height: 8px;
 }
-
-
-
 
 .answers {
   display: flex;
@@ -221,6 +209,7 @@ body {
 
   .answer {
     border-radius: 24px;
+    border: 3px solid transparent;
 
     & h2 {
       color: var(--Grey-Navy);
@@ -233,7 +222,6 @@ body {
       background-color: #F6E7FF;
       border-radius: 8px;
     }
-
   }
 
   .selected {
@@ -246,7 +234,6 @@ body {
 
   & .wrong-answer {
     border: 3px solid red;
-
     & h2 {
       background-color: red;
       color: #fff;
@@ -255,7 +242,6 @@ body {
 
   .correct-answer {
     border: 3px solid green;
-    
     & h2 {
       background-color: green;
       color: #fff;
@@ -319,16 +305,12 @@ body {
   }
 }
 
-
-
-
 .answerBtn {
   color: var(--Pure-White, #FFF);
   font-family: Rubik;
   font-size: 28px;
   font-weight: 500;
   line-height: 100%;
-
 }
 
 .finishQuizContainer {
@@ -429,7 +411,7 @@ body {
   }
 }
 
-@media (width < 769px) {
+@media (width <= 780px) {
   .container {
     width: 100%;
     padding: 0 64px;
@@ -443,6 +425,7 @@ body {
 
   .questionHeader {
     width: 100%;
+    margin: 24px auto;
   }
 
   .questionSection{
@@ -455,19 +438,16 @@ body {
     gap: 40px;
   }
 
-
   .progressbarContainer{
-    margin-bottom: 64px;
+    margin-bottom: 24px;
   }
 
   .answers {
+    gap: 16px;
     & button {
       width: 100%;
-
     }
   }
-
-
 
   .finishQuizContainer {
     flex-direction: column;
@@ -476,7 +456,6 @@ body {
   .quizComplete {
     text-align: justify;
     margin-bottom: 64px;
-
   }
 
   .playAgainBtn button {
@@ -486,12 +465,9 @@ body {
   .quizScore {
     width: 100%;
   }
-
-
 }
 
-
-@media (width < 400px) {
+@media (width < 450px) {
 
   .container {
     margin: 24px auto;
@@ -527,8 +503,6 @@ body {
       gap: 16px;
       padding: 12px;
       border-radius: 12px;
-      
-      
     }
 
     & p {
@@ -543,6 +517,7 @@ body {
   }
 
   .questionsText {
+    height: 110px;
     & p {
       font-size: 14px;
     }
@@ -560,11 +535,8 @@ body {
     gap: 24px;
   }
 
-  .progressbarContainer {
-    margin-bottom: 40px;
-  }
-
   .answers {
+    gap: 12px;
     & .submitAnswer {
       padding: 20px;
       gap: 16px;
@@ -579,8 +551,6 @@ body {
         width: 100%;
         gap: 16px;
         padding: 12px;
-  
-        
       }
       & p {
         font-size: 18px;
@@ -588,32 +558,21 @@ body {
       & h2 {
         font-size: 18px;
       }
-
-      
     }
   }
-  
-  
-  
 
   .quizComplete {
 
     margin-bottom: 40px;
 
-
     & .quizStatus {
-
       font-size: 40px;
-
     }
-
 
     & .scoreText {
         font-size: 40px;
     }
-
   }
-
 
   .quizScore {
     padding: 24px;
@@ -633,18 +592,6 @@ body {
       & p {
         font-size: 18px;
       }
-  
     }
   }
-
-
-     
-
-
-
-
-
-
 }
-
-
